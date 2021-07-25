@@ -1,23 +1,22 @@
 
 
-  body.headerdiv{
-    background-color:azure;
-    
+.headerdiv{
+    background-color:azure!important;
   }
 
-  body.headerdiv a:link{
-    text-decoration: none;
-    color: black;
+ .headerdiv a:link{
+    text-decoration: none!important;
+    color: black !important;
   }
-  body.headerdiv a:visited {
-    text-decoration: none;
-    color: black;
+  .headerdiv a:visited {
+    text-decoration: none!important;
+    color: black !important;
   }
-  body.headerdiv a:hover {
-    text-decoration: none;
-    color: black;
+  .headerdiv a:hover {
+    text-decoration: none !important;
+    color: black !important;
   }
-  body.headerdiv a:active {
-    text-decoration: none;
-    color: black;
+  .headerdiv a:active {
+    text-decoration: none!important;
+    color: black !important;
   }

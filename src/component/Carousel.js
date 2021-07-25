@@ -17,7 +17,7 @@ export default function Block() {
     const classes = useStyles();
 
     return (
-        <Carousel showThumbs={false} showStatus={false} autoPlay={true}>
+        <Carousel showThumbs={false} showStatus={false} autoPlay={true} infiniteLoop={true}>
             <div>
                 <img src="http://custompaintinc.com/wp-content/uploads/2014/12/slider1_02.jpg" />
                

@@ -1,27 +1,27 @@
 
-body.Profile:hover {
-    background-color:floralwhite;
+.Profile:hover {
+    background-color:floralwhite !important;
 }
-body.Profile.ezcol-one-half {
-    width: 48%;
+.Profile.ezcol-one-half {
+    width: 48% !important;
 }
-body.Profile.ezcol-one-quarter, .ezcol-one-half, .ezcol-three-quarter, .ezcol-one-third, .ezcol-two-third, .ezcol-one-fifth, .ezcol-two-fifth, .ezcol-three-fifth, .ezcol-four-fifth {
-    float: left;
-    margin-right: 4%;
-    position: relative;
-    word-wrap: break-word;
-    hyphens: auto;
+.Profile.ezcol-one-quarter, .ezcol-one-half, .ezcol-three-quarter, .ezcol-one-third, .ezcol-two-third, .ezcol-one-fifth, .ezcol-two-fifth, .ezcol-three-fifth, .ezcol-four-fifth {
+    float: left !important;
+    margin-right: 4% !important;
+    position: relative !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
     -moz-box-sizing: border-box !important;
     -webkit-box-sizing: border-box !important;
     box-sizing: border-box !important;
-    text-rendering: optimizedLegibility;
+    text-rendering: optimizedLegibility !important;
 }
-body.Profile.ezcol-last {
-    float: right;
-    clear: right;
-    margin-right: 0;
+.Profile.ezcol-last {
+    float: right !important;
+    clear: right !important;
+    margin-right: 0 !important;
 }
-body.Profile.ezcol-divider {
+.Profile.ezcol-divider {
     clear: both !important;
     display: block !important;
     margin-bottom: 0px !important;
