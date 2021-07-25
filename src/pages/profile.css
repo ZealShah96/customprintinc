@@ -1,0 +1,31 @@
+
+body.Profile:hover {
+    background-color:floralwhite;
+}
+body.Profile.ezcol-one-half {
+    width: 48%;
+}
+body.Profile.ezcol-one-quarter, .ezcol-one-half, .ezcol-three-quarter, .ezcol-one-third, .ezcol-two-third, .ezcol-one-fifth, .ezcol-two-fifth, .ezcol-three-fifth, .ezcol-four-fifth {
+    float: left;
+    margin-right: 4%;
+    position: relative;
+    word-wrap: break-word;
+    hyphens: auto;
+    -moz-box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    text-rendering: optimizedLegibility;
+}
+body.Profile.ezcol-last {
+    float: right;
+    clear: right;
+    margin-right: 0;
+}
+body.Profile.ezcol-divider {
+    clear: both !important;
+    display: block !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    width: 100% !important;
+    background: none !important;
+}
