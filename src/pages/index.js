@@ -10,7 +10,7 @@ import { Parallax } from "react-parallax";
 import image from './../images/1.jpg';
 import bg1 from './../images/2.jpg';
 import Links from './../component/Links';
-import * as style from './index.css';
+import * as style from './index.scss';
 
 const suppliers = [
   {

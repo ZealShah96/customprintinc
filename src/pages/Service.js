@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core";
 import Box from '@material-ui/core/Box';
 import Carousel from "./../component/Carousel";
-import * as style from './profile.css';
+import * as style from './profile.scss';
 
 // styles
 const pageStyles = {
