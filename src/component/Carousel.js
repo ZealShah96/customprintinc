@@ -1,13 +1,7 @@
-import ReactDOM from 'react-dom';
 import {
-    AppBar,
-    Toolbar,
-    Typography,
-    makeStyles,
-    Button,
+    makeStyles
 } from "@material-ui/core";
 import React, { Component } from 'react';
-import Grid from '@material-ui/core/Grid';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -23,7 +17,7 @@ export default function Block() {
     const classes = useStyles();
 
     return (
-        <Carousel showThumbs={false} showStatus={false}>
+        <Carousel showThumbs={false} showStatus={false} autoPlay={true}>
             <div>
                 <img src="http://custompaintinc.com/wp-content/uploads/2014/12/slider1_02.jpg" />
                

@@ -3,15 +3,42 @@ import Header from "./../component/Header";
 import Block from "./../component/Block";
 import Grid from '@material-ui/core/Grid';
 import Carousel from "./../component/Carousel";
-import ParallaxView from "./../component/Parallax";
 import {
-  AppBar,
-  Toolbar,
-  Typography,
-  makeStyles,
-  Button,
+  makeStyles
 } from "@material-ui/core";
 import { Parallax } from "react-parallax";
+import image from './../images/1.jpg';
+import bg1 from './../images/2.jpg';
+import Links from './../component/Links';
+import './index.scss';
+
+const suppliers = [
+  {
+    "image_link": "http://www.prismpowder.com/",
+    "image": 'https://i.ibb.co/x6ScctB/p1.jpg',
+    "alt": "Prism powder coatings ltd."
+  },
+  {
+    "image_link": "http://www.tiger-coatings.us/",
+    "image": 'https://i.ibb.co/df039gW/tiger-drylac-powder-coatings.jpg',
+    "alt": "Tiger Drylac Powder Coatings"
+  },
+  {
+    "image_link": "http://www.sherwin-williams.com/",
+    "image": 'https://i.ibb.co/yS78Cd2/sherwin-williams.jpg',
+    "alt": "Sherwin-Williams"
+  },
+  {
+    "image_link": "http://www.protechpowder.com/",
+    "image": 'https://i.ibb.co/NtXwxfv/the-protech-group.jpg',
+    "alt": "Protech Oxyplast"
+  },
+  {
+    "image_link": "http://www.tcipowder.com/",
+    "image": 'https://i.ibb.co/84J66qJ/tci-powder-coatings.jpg',
+    "alt": "TCI Powder Coatings"
+  }
+]
 
 // styles
 const pageStyles = {
@@ -159,12 +186,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const image1 =
-  "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
-const image2 =
-  "https://img00.deviantart.net/2bd0/i/2009/276/c/9/magic_forrest_wallpaper_by_goergen.jpg";
-const image3 =
-  "https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5297440765001_5280261645001-vs.jpg?pubId=5104226627001&videoId=5280261645001";
+
+
+const image1 = image;
+const image2 = bg1;
+
+const image3 = "https://i.ibb.co/Zzc0Yc8/markus-spiske-k0r-Vud-Bo-B4c-unsplash.jpg";
 const image4 =
   "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/empire-state-building-black-and-white-square-format-john-farnan.jpg";
 
@@ -172,13 +199,11 @@ const image4 =
 const IndexPage = () => {
   const classes = useStyles();
   return (
-    <Grid container className={classes.root} style={pageStyles}>
+    <Grid container className={classes.root} style={pageStyles} className={'Header'}>
       <Grid item sm={12} className={classes.background}>
         <Header />
-      </Grid>
-      {/* <Grid item sm={12} >
         <Carousel />
-      </Grid> */}
+      </Grid>
       <Grid item sm={12} className={classes.background}>
         <title>Home Page</title>
       </Grid>
@@ -188,7 +213,7 @@ const IndexPage = () => {
       <Grid item sm={12} className={classes.background}>
         <Parallax bgImage={image1} strength={500}>
           <div style={textStyles}>
-            <Block />
+            <Block header={'Our Mission'} message={'CUSTOM PAINT is one stop shop for Custom Powder Coating, Liquid Spray Painting, Silk Screening. Our key suppliers Prism Power, Tiger Drylac, Erie Powder, Protech Powder and TCI enables us to provide our clients with superior durable finish with unmatched timing to get the job done right every time. Custom Paint & Silk Screen Inc was established in 2001.  Our service and facility provide customers with the flexibility to meet just about any of your requirements. We are able to efficiently provide services which include powder coating, silk screening and spray painting.  We can match colors to your specifications in powder or wet paint.  Your parts are monitored throughout the production process from receiving to coating and finally, packaging.  At Custom Paint, our trained professional ensure that your parts are carefully inspected and counted to ensure the highest quality results within the customers’ demanding schedule.  Our emphasis is on producing the highest quality work possible.  The bottom line is superior finish, competitive pricing and best of all our consistent quick turn around time, which enables us to meet our customer’s demanding time schedule.  Custom is truly your one stop coating shop as we have powder coating, liquid (wet) painting, and state of the art silk screening in house.'} />
           </div>
         </Parallax>
       </Grid>
@@ -201,8 +226,8 @@ const IndexPage = () => {
       </Grid>
       <Grid item sm={12} className={classes.background}>
         <Parallax bgImage={image2} strength={-100}>
-          <div style={{ height: 500 }}>
-            <div style={textStyles}>Reverse direction</div>
+          <div style={textStyles}>
+            <Links header={'Our Suppliers'} linkObject={suppliers} />
           </div>
         </Parallax>
       </Grid>
