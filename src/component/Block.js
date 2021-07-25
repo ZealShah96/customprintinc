@@ -3,7 +3,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import Grid from '@material-ui/core/Grid';
-import './block.css';
+import * as style from './block.css';
 
 const useStyles = makeStyles(() => ({
     textCenter: {
