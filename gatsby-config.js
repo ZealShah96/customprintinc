@@ -3,7 +3,16 @@ module.exports = {
     title: "CustomPrint",
   },
   plugins: [
-    "gatsby-plugin-sass",
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        cssLoaderOptions: {
+          modules: {
+            exportLocalsConvention: 'camelCaseOnly'
+          }
+        }
+      }
+  },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-remark",
@@ -27,4 +36,5 @@ module.exports = {
       __key: "pages",
     },
   ],
+
 };
