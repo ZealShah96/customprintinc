@@ -220,7 +220,7 @@ const IndexPage = () => {
       <Grid item sm={12} className={classes.background}>
         <Parallax bgImage={image3} blur={{ min: -1, max: 3 }}>
           <div style={{ height: 500 }}>
-            <div style={textStyles}>Dynamic Blur</div>
+            <div style={textStyles}>Needed to decide what you want here.</div>
           </div>
         </Parallax>
       </Grid>

@@ -16,7 +16,7 @@ import { Link } from "gatsby"
 const headersData = [
     {
         label: "Home",
-        href: "/listings",
+        href: "/",
     },
     {
         label: "Profile",
