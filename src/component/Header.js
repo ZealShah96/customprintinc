@@ -98,7 +98,7 @@ export default function Header() {
 
     const femmecubatorLogo = (
         <Typography variant="h6" component="h1" className={logo}>
-            Custom Paint & Slik Screen Inc.
+          <img src="http://custompaintinc.com/wp-content/themes/custom_paint_silk_screen_inc/images/custom_paint_silk_screen_inc_01.jpg" alt="CUSTOM PAINT &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" width="458" height="90" title="CUSTOM PAINT &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" />
         </Typography>
     );
 
