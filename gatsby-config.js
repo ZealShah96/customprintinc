@@ -3,16 +3,7 @@ module.exports = {
     title: "CustomPrint",
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        cssLoaderOptions: {
-          modules: {
-            exportLocalsConvention: 'camelCaseOnly'
-          }
-        }
-      }
-  },
+    "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-remark",

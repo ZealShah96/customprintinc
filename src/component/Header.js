@@ -13,6 +13,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "gatsby"
 
+
+
 const headersData = [
     {
         label: "Home",
@@ -68,7 +70,7 @@ const headersData = [
 
 const useStyles = makeStyles(() => ({
     header: {
-        backgroundColor: "#eee",
+        backgroundColor: 'azure',
     },
     logo: {
         fontFamily: "Work Sans, sans-serif",
@@ -81,11 +83,16 @@ const useStyles = makeStyles(() => ({
     },
     icon:{
         paddingLeft:10
-    }
+    },
+    achorLinks:{
+        textDecoration: 'none',
+        color:'black'
+    },
+
 }));
 
 export default function Header() {
-    const { header, logo, toolbarButtons,icon } = useStyles();
+    const { header, logo, toolbarButtons,icon,achorLinks } = useStyles();
 
     const displayDesktop = () => {
         return (
@@ -117,7 +124,7 @@ export default function Header() {
     };
 
     return (
-        <AppBar className={'headerdiv'}>{displayDesktop()}</AppBar>
+        <AppBar className={achorLinks,header}>{displayDesktop()}</AppBar>
     );
 }
 

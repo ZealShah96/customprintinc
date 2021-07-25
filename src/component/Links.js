@@ -4,7 +4,6 @@ import {
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
-import * as style from './block.scss';
 import Img from "gatsby-image"
 import { bounce } from 'react-animations';
 import { StyleSheet, css } from 'aphrodite';
