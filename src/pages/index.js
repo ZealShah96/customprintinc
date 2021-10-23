@@ -11,7 +11,12 @@ import image from './../images/1.jpg';
 import bg1 from './../images/2.jpg';
 import Links from './../component/Links';
 
-
+/**
+ * <img src="https://i.ibb.co/wLrQQg9/1.jpg" alt="1" border="0">
+<img src="https://i.ibb.co/r3zBHJ4/2.jpg" alt="2" border="0">
+<img src="https://i.ibb.co/CmnxSzg/4.jpg" alt="4" border="0">
+<img src="https://i.ibb.co/mSZQqYk/logo.jpg" alt="logo" border="0">
+ */
 const suppliers = [
   {
     "image_link": "http://www.prismpowder.com/",

@@ -12,7 +12,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "gatsby"
-
+import './Header.css'
 
 
 const headersData = [
@@ -105,7 +105,7 @@ export default function Header() {
 
     const femmecubatorLogo = (
         <Typography variant="h6" component="h1" className={logo}>
-          <img src="http://custompaintinc.com/wp-content/themes/custom_paint_silk_screen_inc/images/custom_paint_silk_screen_inc_01.jpg" alt="CUSTOM PAINT &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" width="458" height="90" title="CUSTOM PAINT &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" />
+          <img src="https://i.ibb.co/mSZQqYk/logo.jpg" alt="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" width="458" height="90" title="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" />
         </Typography>
     );
 
