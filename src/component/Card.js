@@ -9,11 +9,11 @@ import Typography from "@material-ui/core/Typography";
 
 import waveImg from "../images/1.jpg";
 
-const useStyles = makeStyles(()=>{
+const useStyles = makeStyles(()=>({
     media: {
         height:"100px"
     }
-});
+}));
 
 export default function ImgCard() {
     const classes = useStyles();
