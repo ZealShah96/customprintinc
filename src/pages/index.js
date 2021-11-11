@@ -10,6 +10,7 @@ import { Parallax } from "react-parallax";
 import image from './../images/1.jpg';
 import bg1 from './../images/2.jpg';
 import Links from './../component/Links';
+import Card from "./../component/Card";
 
 /**
  * <img src="https://i.ibb.co/wLrQQg9/1.jpg" alt="1" border="0">
@@ -208,13 +209,14 @@ const IndexPage = () => {
       <Grid item sm={12} className={classes.background}>
         <Header />
         <Carousel />
+        
       </Grid>
       <Grid item sm={12} className={classes.background}>
         <title>Home Page</title>
       </Grid>
-      {/* <Grid item sm={12} className={classes.background}>
-        <Block />
-      </Grid> */}
+      <Grid item sm={12} className={classes.background}>
+      <Card />
+      </Grid>
       <Grid item sm={12} className={classes.background}>
         <Parallax bgImage={image1} strength={500}>
           <div style={textStyles}>
