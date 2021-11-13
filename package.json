@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "start": "gatsby build && node server.js",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
@@ -26,6 +26,7 @@
     "bootstrap": "^4.6.0",
     "css-loader": "^5.2.6",
     "dangerously-set-inner-html": "^2.0.1",
+    "express": "^4.17.1",
     "gatsby": "^3.6.2",
     "gatsby-image": "^3.10.0",
     "gatsby-plugin-image": "^1.7.1",
