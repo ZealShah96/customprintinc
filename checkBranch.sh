@@ -1,8 +1,7 @@
 #!/bin/sh
 BRANCH_NAME=server
-if grep -Fqe $BRANCH_NAME << EOF
-`git show-branch --all`
-EOF
+if grep -Fqe $BRANCH_NAME -eq `git show-branch --all`
+
 then
    echo "$BRANCH_NAME exists"
    git checkout server
@@ -10,7 +9,7 @@ then
    git add .
    git commit -m "Commit Public folder"
    git push origin server
-   echo "$BRANCH_NAME exists and public commit"
+   # echo "$BRANCH_NAME exists and public commit"
 else
    echo "$BRANCH_NAME not exists"
    git checkout -b server
@@ -18,5 +17,5 @@ else
    git add .
    git commit -m "Commit Public folder"
    git push origin server
-   echo "$BRANCH_NAME not exists and public commit"
+   # echo "$BRANCH_NAME not exists and public commit"
 fi
