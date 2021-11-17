@@ -12,6 +12,7 @@ import bg1 from './../images/2.jpg';
 import Links from './../component/Links';
 import Card from "./../component/Card";
 import FooterComponent from "../component/Footer";
+import Faqs from "../component/Faqs";
 
 /**
  * <img src="https://i.ibb.co/wLrQQg9/1.jpg" alt="1" border="0">
@@ -234,6 +235,10 @@ const IndexPage = () => {
             <Links header={'Our Suppliers'} linkObject={suppliers} />
           </div>
         </Parallax>
+      </Grid>
+      <Grid item sm={12} className={classes.background}>
+        
+        <Faqs></Faqs>
       </Grid>
       <Grid item sm={12} className={classes.background}>
         <FooterComponent />
