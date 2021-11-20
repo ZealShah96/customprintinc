@@ -1,12 +1,8 @@
 import {
     makeStyles
 } from "@material-ui/core";
-import React from "react";
-import { Link as RouterLink } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
-import Img from "gatsby-image"
-import { bounce } from 'react-animations';
-import { StyleSheet, css } from 'aphrodite';
+import React from "react";
 // https://ibb.co/HqDMMfb
 // https://ibb.co/8ctjwNk
 // https://ibb.co/x8yJJWy
@@ -23,13 +19,6 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-const styles = StyleSheet.create({
-    bounce: {
-      animationName: bounce,
-      animationDuration: '1s'
-    }
-  })
-
 export default function Links(props) {
     const classes = useStyles();
 
@@ -43,8 +32,8 @@ export default function Links(props) {
                 {/* {JSON.stringify(props.linkObject[0])} */}
                 {
                     props.linkObject.map((element, index) => {
-                        return <Grid item xs={12}><a href={element.image_link} target='_blank'>
-                            <img src={element.image} border="0" height="80px" />
+                        return <Grid item xs={12}><a href={element.image_link} target='_blank' rel="noreferrer">
+                            <img src={element.image} border="0" height="80px" alt="Image for Link"/>
                         </a>
                         </Grid>
                     })

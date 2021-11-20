@@ -1,18 +1,15 @@
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    AppBar,
-    Toolbar,
-    Typography,
-    makeStyles,
-    Button,
+    AppBar, Button, makeStyles, Toolbar,
+    Typography
 } from "@material-ui/core";
-import React from "react";
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { withStyles } from "@material-ui/core/styles";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { Link } from "gatsby"
-import './Header.css'
+import { Link } from "gatsby";
+import React from "react";
+import './Header.css';
 
 
 const headersData = [
@@ -94,7 +91,7 @@ const useStyles = makeStyles(() => ({
 
 
 export default function Header() {
-    const { header, logo, toolbarButtons,icon,achorLinks } = useStyles();
+    const { header, logo, toolbarButtons,achorLinks } = useStyles();
 
     const displayDesktop = () => {
         return (
@@ -117,7 +114,7 @@ export default function Header() {
             return (
                 <React.Fragment>
                     {
-                        childs != undefined ? SimpleMenu(childs,label) :  <Link to={href} replace><Button>{label}</Button></Link>
+                        childs !== undefined ? SimpleMenu(childs,label) :  <Link to={href} replace><Button>{label}</Button></Link>
                     }
                 </React.Fragment>
 
@@ -133,7 +130,7 @@ export default function Header() {
 
 export function SimpleMenu(childs,label) {
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const { header, logo, toolbarButtons,icon } = useStyles();
+    const {icon } = useStyles();
 
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
@@ -147,7 +144,7 @@ export function SimpleMenu(childs,label) {
       <React.Fragment>
         <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         <Button>{label}</Button>
-          { childs != undefined ? <FontAwesomeIcon icon={faAngleDown} className={icon}/>:''}
+          { childs !== undefined ? <FontAwesomeIcon icon={faAngleDown} className={icon}/>:''}
         </Button>
         
         <StyledMenu
@@ -162,7 +159,7 @@ export function SimpleMenu(childs,label) {
                 return (
                     <React.Fragment>
                         {
-                            childs != undefined ? SimpleMenu(childs,label) : <StyledMenuItem onClick={handleClose} className={'Header'}><Link to={href} replace>{label}</Link></StyledMenuItem>
+                            childs !== undefined ? SimpleMenu(childs,label) : <StyledMenuItem onClick={handleClose} className={'Header'}><Link to={href} replace>{label}</Link></StyledMenuItem>
                         }
                     </React.Fragment>
     

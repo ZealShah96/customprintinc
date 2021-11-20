@@ -1,37 +1,10 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import Grid from '@material-ui/core/Grid';
-import Header from "./../component/Header";
 import {
     makeStyles
 } from "@material-ui/core";
-import Box from '@material-ui/core/Box';
-import Carousel from "./../component/Carousel";
-import Example from "./Reacttiles";
+import Grid from '@material-ui/core/Grid';
+import * as React from "react";
 import Layout from "../component/Layout";
-
-// styles
-const pageStyles = {
-    color: "#232129",
-    padding: "96px",
-    fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-    marginTop: 0,
-    marginBottom: 64,
-    maxWidth: 320,
-}
-
-const paragraphStyles = {
-    marginBottom: 48,
-}
-const codeStyles = {
-    color: "#8A6534",
-    padding: 4,
-    backgroundColor: "#FFF4DB",
-    fontSize: "1.25rem",
-    borderRadius: 4,
-}
+import Example from "./Reacttiles";
 
 const useStyles = makeStyles((theme) => ({
     root: {

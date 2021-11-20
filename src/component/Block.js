@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
 
 export default function Block(props) {
     const classes = useStyles();
-    const {header,message,...others}=props;
+    const {header,message}=props;
     return (
         <Grid container xs={12} className={classes.block}>
             <Grid item xs={12} className={classes.textCenter}>

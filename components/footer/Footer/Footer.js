@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Button } from "@bit/tsukhu.ultra.button";
 import {
   FaFacebook,
   FaInstagram,
