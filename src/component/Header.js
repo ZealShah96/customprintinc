@@ -70,7 +70,7 @@ const headersData = [
 
 const useStyles = makeStyles(() => ({
     header: {
-        backgroundColor: 'azure',
+        backgroundColor: '#FFFFFF',
     },
     logo: {
         fontFamily: "Work Sans, sans-serif",
@@ -91,6 +91,8 @@ const useStyles = makeStyles(() => ({
 
 }));
 
+
+
 export default function Header() {
     const { header, logo, toolbarButtons,icon,achorLinks } = useStyles();
 
@@ -105,7 +107,7 @@ export default function Header() {
 
     const femmecubatorLogo = (
         <Typography variant="h6" component="h1" className={logo}>
-          <img src="https://i.ibb.co/mSZQqYk/logo.jpg" alt="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" width="458" height="90" title="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" />
+          <img src="https://i.ibb.co/2dMYZm2/logo-removebg-preview.png" alt="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" width="458" height="90" title="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" />
         </Typography>
     );
 

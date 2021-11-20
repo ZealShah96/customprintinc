@@ -1,13 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Grid from '@material-ui/core/Grid';
-import Header from "./../component/Header";
 import {
     makeStyles
 } from "@material-ui/core";
-import Box from '@material-ui/core/Box';
-import Carousel from "./../component/Carousel";
-
+import Layout from "../component/Layout";
 
 // styles
 const pageStyles = {
@@ -46,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
         // display: 'flex'
         backgroundColor: "#eee"
     },
-    contentBackground:{
+    contentBackground: {
         backgroundColor: "#eee"
     },
     contentCenter: {
@@ -69,23 +66,16 @@ const Content = {
 const Services = () => {
     const classes = useStyles();
     return (
-        <Grid item sm={12} className={classes.background} container className={'Profile'}>
-            <head>
-                <title>Profile</title>
-            </head>
-            <Grid item sm={12} className={classes.background}>
-                <Header />
-                <Carousel />
-            </Grid>
+        <Layout>
             <Grid item sm={12} className={classes.background}>
                 <Grid item sm={12} className={classes.text}>
                     {Content.title}
                 </Grid>
                 <Grid item sm={12} className={classes.content}>
-                <div dangerouslySetInnerHTML={{ __html: Content.mainContent}} />
+                    <div dangerouslySetInnerHTML={{ __html: Content.mainContent }} />
                 </Grid>
             </Grid>
-        </Grid>
+        </Layout>
     )
 }
 

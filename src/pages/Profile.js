@@ -8,6 +8,7 @@ import {
 import Box from '@material-ui/core/Box';
 import Carousel from "./../component/Carousel";
 import Example from "./Reacttiles";
+import Layout from "../component/Layout";
 
 // styles
 const pageStyles = {
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
         // display: 'flex'
         backgroundColor: "#eee"
     },
-    contentBackground:{
+    contentBackground: {
         backgroundColor: "#eee"
     },
     contentCenter: {
@@ -71,26 +72,19 @@ const Profile = () => {
 
 
     return (
-        <Grid item sm={12} className={classes.background} container className={'Profile'}>
-            <head>
-                <title>Profile</title>
-            </head>
-            <Grid item sm={12} className={classes.background}>
-                <Header />
-                <Carousel />
-            </Grid>
+        <Layout>
             <Grid item sm={12} className={classes.background}>
                 <Grid item sm={12} className={classes.text}>
                     {Content.title}
                 </Grid>
                 <Grid item sm={12} className={classes.content}>
-                <div dangerouslySetInnerHTML={{ __html: Content.mainContent}} />
+                    <div dangerouslySetInnerHTML={{ __html: Content.mainContent }} />
                 </Grid>
                 <Grid>
-                <Example />
+                    <Example />
                 </Grid>
             </Grid>
-        </Grid>
+        </Layout>
     )
 }
 

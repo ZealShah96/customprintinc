@@ -1,8 +1,6 @@
 import * as React from "react"
-import Header from "./../component/Header";
 import Block from "./../component/Block";
 import Grid from '@material-ui/core/Grid';
-import Carousel from "./../component/Carousel";
 import {
   makeStyles
 } from "@material-ui/core";
@@ -13,6 +11,7 @@ import Links from './../component/Links';
 import Card from "./../component/Card";
 import FooterComponent from "../component/Footer";
 import Faqs from "../component/Faqs";
+import Layout from "../component/Layout";
 
 /**
  * <img src="https://i.ibb.co/wLrQQg9/1.jpg" alt="1" border="0">
@@ -207,11 +206,7 @@ const image4 =
 const IndexPage = () => {
   const classes = useStyles();
   return (
-    <Grid container className={classes.root} style={pageStyles} className={'Header'}>
-      <Grid item sm={12} className={classes.background}>
-        <Header />
-        <Carousel />
-      </Grid>
+    <Layout pageName={"Home Page"}>
       <Grid item sm={12} className={classes.background}>
         <title>Home Page</title>
       </Grid>
@@ -237,13 +232,9 @@ const IndexPage = () => {
         </Parallax>
       </Grid>
       <Grid item sm={12} className={classes.background}>
-        
         <Faqs></Faqs>
       </Grid>
-      <Grid item sm={12} className={classes.background}>
-        <FooterComponent />
-      </Grid>
-    </Grid>
+    </Layout>
   )
 }
 
