@@ -1,15 +1,23 @@
 #!/bin/sh
-#!/bin/bash
-echo "start\n"
-for f in *.jpg
-do
-  fname=$(basename "$f")
-  echo "fname is $fname\n"
-  fname="${filename%.*}"
-  echo "fname is $fname\n"
-  if [$[fname%2] -eq 1 ]
-  then
-    echo "removing $fname\n"
-    rm $f
-  fi
-done
+BRANCH_NAME=server
+if grep -Fqe $BRANCH_NAME -eq EOF `git show-branch --all` EOF
+
+then
+   echo "$BRANCH_NAME exists"
+   ssh -T git@github.com
+   git checkout server
+   git pull origin server
+   git add .
+
+   git commit -m "Commit Public folder"
+   git push origin server
+   # echo "$BRANCH_NAME exists and public commit"
+else
+   echo "$BRANCH_NAME not exists"
+   git checkout -b server
+   git pull origin server
+   git add .
+   git commit -m "Commit Public folder"
+   git push origin server
+   # echo "$BRANCH_NAME not exists and public commit"
+fi
