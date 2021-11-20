@@ -39,7 +39,7 @@ const Layout = ({ children, pageName }) => {
     debugger;
     const classes = useStyles();
     return (
-        <Grid container className={classes.root}  className={'Header'}>
+        <Grid container className={[classes.root,'Header']}>
             <Grid item sm={12} className={classes.background}>
                 <Header />
                 <Carousel />

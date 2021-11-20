@@ -123,7 +123,7 @@ export default function Header() {
     };
 
     return (
-        <AppBar className={achorLinks,header}>{displayDesktop()}</AppBar>
+        <AppBar className={[achorLinks,header]}>{displayDesktop()}</AppBar>
     );
 }
 

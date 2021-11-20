@@ -33,7 +33,7 @@ export default function Links(props) {
                 {
                     props.linkObject.map((element, index) => {
                         return <Grid item xs={12}><a href={element.image_link} target='_blank' rel="noreferrer">
-                            <img src={element.image} border="0" height="80px" alt="Image for Link"/>
+                            <img src={element.image} border="0" height="80px" alt="Link"/>
                         </a>
                         </Grid>
                     })
