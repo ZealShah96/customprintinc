@@ -1,10 +1,9 @@
-import {
-  makeStyles
-} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
 import * as React from "react";
 import { Parallax } from "react-parallax";
 import Faqs from "../component/Faqs";
+import CardItem from "../component/CardItem";
 import Layout from "../component/Layout";
 import ShowContent from "../component/Mission";
 import Links from './../component/Links';
@@ -76,12 +75,15 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+// cards data
+const services = [
+  {icon: {}}
 
+];
 
 const image1 = image;
 const image2 = bg1;
 const image3 = bg2;
-
 
 // markup
 const IndexPage = () => {
@@ -97,6 +99,13 @@ const IndexPage = () => {
           message={'Custom paint is one stop shop for Custom Powder Coating, Liquid Spray Painting, Silk Screening. Our key suppliers Prism Power, Tiger Drylac, Erie Powder, Protech Powder and TCI enables us to provide our clients with superior durable finish with unmatched timing to get the job done right every time. Custom Paint & Silk Screen Inc was established in 2001.  Our service and facility provide customers with the flexibility to meet just about any of your requirements. We are able to efficiently provide services which include powder coating, silk screening and spray painting.  We can match colors to your specifications in powder or wet paint.  Your parts are monitored throughout the production process from receiving to coating and finally, packaging.  At Custom Paint, our trained professional ensure that your parts are carefully inspected and counted to ensure the highest quality results within the customers’ demanding schedule.  Our emphasis is on producing the highest quality work possible.  The bottom line is superior finish, competitive pricing and best of all our consistent quick turn around time, which enables us to meet our customer’s demanding time schedule.  Custom is truly your one stop coating shop as we have powder coating, liquid (wet) painting, and state of the art silk screening in house.'}/>
           {/* <Block header={'Our Mission'} message={'CUSTOM PAINT is one stop shop for Custom Powder Coating, Liquid Spray Painting, Silk Screening. Our key suppliers Prism Power, Tiger Drylac, Erie Powder, Protech Powder and TCI enables us to provide our clients with superior durable finish with unmatched timing to get the job done right every time. Custom Paint & Silk Screen Inc was established in 2001.  Our service and facility provide customers with the flexibility to meet just about any of your requirements. We are able to efficiently provide services which include powder coating, silk screening and spray painting.  We can match colors to your specifications in powder or wet paint.  Your parts are monitored throughout the production process from receiving to coating and finally, packaging.  At Custom Paint, our trained professional ensure that your parts are carefully inspected and counted to ensure the highest quality results within the customers’ demanding schedule.  Our emphasis is on producing the highest quality work possible.  The bottom line is superior finish, competitive pricing and best of all our consistent quick turn around time, which enables us to meet our customer’s demanding time schedule.  Custom is truly your one stop coating shop as we have powder coating, liquid (wet) painting, and state of the art silk screening in house.'} /> */}
       </Grid>
+
+      <Grid item sm={12} className={classes.background}>
+      <Grid item sm={3}>
+        <CardItem />
+      </Grid>
+      </Grid>
+
       <Grid item sm={12} className={classes.background}>
         <Parallax bgImage={image3} blur={{ min: -1, max: 3 }}>
           <div style={{ height: 500 }}>
