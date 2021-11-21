@@ -11,7 +11,7 @@ import Links from './../component/Links';
 import image from './../images/1.png';
 import bg1 from './../images/2.png';
 import bg2 from './../images/3.png';
-import MissionImage from './../images/4.png';
+import MissionImage from './../images/4.gif';
 
 /**
  * <img src="https://i.ibb.co/wLrQQg9/1.jpg" alt="1" border="0">
