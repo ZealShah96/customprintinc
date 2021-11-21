@@ -10,6 +10,9 @@ const data = [
 ]
 
 const useStyles = makeStyles(() => ({
+    container: {
+        backgroundColor: '#F5F5F5'
+    },
     questionWrapper : {
         borderRadius: "5px",
         marginBottom: "5px"
@@ -27,7 +30,7 @@ export default function Faqs() {
     const classes = useStyles();
     return (
         <>
-        <Grid container xs={12}>
+        <Grid className={classes.container} container xs={12}>
             <Grid item xs={3}></Grid>
 
             <Grid item xs={6}>
