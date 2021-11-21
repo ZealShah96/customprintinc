@@ -1,12 +1,10 @@
-import {
-    makeStyles
-} from "@material-ui/core";
-import Grid from '@material-ui/core/Grid';
+import { makeStyles } from "@material-ui/core";
 import * as React from "react";
 import { Helmet } from 'react-helmet';
 import Carousel from "./../component/Carousel";
 import Header from "./../component/Header";
 import FooterComponent from "./Footer";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -37,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 
 // markup
 const Layout = ({ children, pageName }) => {
-    debugger;
     const classes = useStyles();
     return (
         <Grid container className={[classes.root, 'Header']}>
