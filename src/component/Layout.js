@@ -3,6 +3,7 @@ import {
 } from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
 import * as React from "react";
+import { Helmet } from 'react-helmet';
 import Carousel from "./../component/Carousel";
 import Header from "./../component/Header";
 import FooterComponent from "./Footer";
@@ -39,7 +40,10 @@ const Layout = ({ children, pageName }) => {
     debugger;
     const classes = useStyles();
     return (
-        <Grid container className={[classes.root,'Header']}>
+        <Grid container className={[classes.root, 'Header']}>
+            <Helmet>
+                <title>{pageName}</title>
+            </Helmet>
             <Grid item sm={12} className={classes.background}>
                 <Header />
                 <Carousel />

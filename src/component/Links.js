@@ -16,7 +16,10 @@ const useStyles = makeStyles(() => ({
         padding: '10px',
         fontSize: 25,
         color: 'black'
-    }
+    },
+  suppliersData:{
+    justifyContent:'center'
+  }
 }));
 
 export default function Links(props) {
@@ -28,11 +31,11 @@ export default function Links(props) {
             <Grid item xs={12} className={classes.textCenter}>
                 {props.header}
             </Grid>
-            <Grid item xs={12} className={classes.textCenter}>
+            <Grid item xs={12} container className={[classes.textCenter,classes.suppliersData]}>
                 {/* {JSON.stringify(props.linkObject[0])} */}
                 {
                     props.linkObject.map((element, index) => {
-                        return <Grid item xs={12}><a href={element.image_link} target='_blank' rel="noreferrer">
+                        return <Grid item xs={2}><a href={element.image_link} target='_blank' rel="noreferrer">
                             <img src={element.image} border="0" height="80px" alt="Link"/>
                         </a>
                         </Grid>

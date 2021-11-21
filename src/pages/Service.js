@@ -30,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
     text: {
         color: 'red',
         fontSize: '50px'
-    }
+    },
+
 }));
 
 const Content = {
@@ -44,7 +45,7 @@ const Content = {
 const Services = () => {
     const classes = useStyles();
     return (
-        <Layout>
+        <Layout pageName={"Service"}>
             <Grid item sm={12} className={classes.background}>
                 <Grid item sm={12} className={classes.text}>
                     {Content.title}

@@ -1,10 +1,9 @@
 import {
-    makeStyles
+    makeStyles, Paper
 } from "@material-ui/core";
-import Grid from '@material-ui/core/Grid';
 import * as React from "react";
 import Layout from "../component/Layout";
-import Example from "./Reacttiles";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,12 +23,15 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#eee"
     },
     contentCenter: {
-        alignItems: 'center'
+        alignItems: 'center',
+        padding:10,
+        margin:5
     },
     text: {
         color: 'red',
         fontSize: '50px'
-    }
+    },
+    
 }));
 
 const Content = {
@@ -45,20 +47,32 @@ const Profile = () => {
 
 
     return (
-        <Layout>
-            <Grid item sm={12} className={classes.background}>
-                <Grid item sm={12} className={classes.text}>
-                    {Content.title}
-                </Grid>
-                <Grid item sm={12} className={classes.content}>
-                    <div dangerouslySetInnerHTML={{ __html: Content.mainContent }} />
-                </Grid>
-                <Grid>
-                    <Example />
-                </Grid>
-            </Grid>
+        <Layout pageName={"Profile"}>
+            <Paper elevation={24} variant="outlined" square className={classes.contentCenter}>
+                
+            </Paper>
         </Layout>
     )
 }
 
 export default Profile
+
+
+{/* <Grid item sm={12} className={classes.background}>
+                    <Grid item sm={12} className={classes.text}>
+                        {Content.title}
+                    </Grid>
+                    <Grid item sm={12} className={classes.content}>
+                        <div dangerouslySetInnerHTML={{ __html: Content.mainContent }} />
+                    </Grid>
+                    <Grid item sm={12} className={classes.contentCenter}>
+                        <Paper elevation={2} variant="outlined" square>
+                            Custom Paint & Silk Screen Inc. was established in 2001. Our service and facility provide customers with the flexibility to meet just about any of your requirements. We are able to efficiently provide services which include powder coating, silk screening and spray painting. We can match colors to your specifications in powder or wet paint. Your parts are monitored throughout the production process from receiving to coating and finally, packaging. At Custom Paint, our trained professional ensure that your parts are carefully inspected and counted to ensure the highest quality results within the customers’ demanding schedule. Our emphasis is on producing the highest quality work possible. The bottom line is superior finish, competitive pricing and best of all our consistent quick turn around time, which enables us to meet our customer’s demanding time schedule. Custom is truly your one stop coating shop as we have powder coating, liquid (wet) painting, and state of the art silk screening in house.
+
+                            Our extensive customer base continues to grow and we are working on making improvements to our production process everyday. Our facility is constantly upgrading to the latest equipment and standards as well as developing more efficient techniques. Our goal is to provide customers with the best quality and service in the industry.
+
+                            If you have any questions, or would like to discuss a future project, please Contact Us.
+
+                        </Paper>
+                    </Grid>
+                </Grid> */}
