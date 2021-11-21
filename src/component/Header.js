@@ -78,20 +78,23 @@ const useStyles = makeStyles(() => ({
     toolbarButtons: {
         marginLeft: 'auto',
     },
-    icon:{
-        paddingLeft:10
+    icon: {
+        paddingLeft: 10
     },
-    achorLinks:{
+    achorLinks: {
         textDecoration: 'none',
-        color:'black'
+        color: 'black'
     },
-
+    button: {
+        color: 'coral',
+        fontWeight: '600'
+    }
 }));
 
 
 
 export default function Header() {
-    const { header, logo, toolbarButtons,achorLinks } = useStyles();
+    const { header, logo, toolbarButtons, achorLinks,button } = useStyles();
 
     const displayDesktop = () => {
         return (
@@ -104,17 +107,17 @@ export default function Header() {
 
     const femmecubatorLogo = (
         <Typography variant="h6" component="h1" className={logo}>
-          <img src="https://i.ibb.co/2dMYZm2/logo-removebg-preview.png" alt="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" width="458" height="90" title="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" />
+            <img src="https://i.ibb.co/2dMYZm2/logo-removebg-preview.png" alt="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" width="458" height="90" title="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" />
         </Typography>
     );
 
     const getMenuButtons = (headersData) => {
         return headersData.map(({ label, href, childs }) => {
-            
+
             return (
                 <React.Fragment>
                     {
-                        childs !== undefined ? SimpleMenu(childs,label) :  <Link to={href} replace><Button>{label}</Button></Link>
+                        childs !== undefined ? SimpleMenu(childs, label) : <Link to={href} replace><Button className={button}>{label}</Button></Link>
                     }
                 </React.Fragment>
 
@@ -123,82 +126,83 @@ export default function Header() {
     };
 
     return (
-        <AppBar className={[achorLinks,header]}>{displayDesktop()}</AppBar>
+        <AppBar className={[achorLinks, header]}>{displayDesktop()}</AppBar>
     );
 }
 
 
-export function SimpleMenu(childs,label) {
+export function SimpleMenu(childs, label) {
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const {icon } = useStyles();
+    const { icon } = useStyles();
+    const classes = useStyles();
 
     const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
+        setAnchorEl(event.currentTarget);
     };
-  
+
     const handleClose = () => {
-      setAnchorEl(null);
+        setAnchorEl(null);
     };
-  
+
     return (
-      <React.Fragment>
-        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        <Button>{label}</Button>
-          { childs !== undefined ? <FontAwesomeIcon icon={faAngleDown} className={icon}/>:''}
-        </Button>
-        
-        <StyledMenu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-            {
-            childs.map(({ label, href, childs }) => {
-                return (
-                    <React.Fragment>
-                        {
-                            childs !== undefined ? SimpleMenu(childs,label) : <StyledMenuItem onClick={handleClose} className={'Header'}><Link to={href} replace>{label}</Link></StyledMenuItem>
-                        }
-                    </React.Fragment>
-    
-                );
-            })
-        }
-        </StyledMenu>
-      </React.Fragment>
+        <React.Fragment>
+            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className={classes.button}>
+                <Button className={classes.button}>{label}</Button>
+                {childs !== undefined ? <FontAwesomeIcon icon={faAngleDown} className={icon} /> : ''}
+            </Button>
+
+            <StyledMenu
+                id="simple-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+            >
+                {
+                    childs.map(({ label, href, childs }) => {
+                        return (
+                            <React.Fragment>
+                                {
+                                    childs !== undefined ? SimpleMenu(childs, label) : <StyledMenuItem onClick={handleClose} className={'Header'}><Link to={href} replace className={classes.button}>{label}</Link></StyledMenuItem>
+                                }
+                            </React.Fragment>
+
+                        );
+                    })
+                }
+            </StyledMenu>
+        </React.Fragment>
     );
-  }
+}
 
-  const StyledMenu = withStyles({
+const StyledMenu = withStyles({
     paper: {
-      border: "1px solid #d3d4d5"
+        border: "1px solid #d3d4d5"
     }
-  })((props) => (
+})((props) => (
     <Menu
-      elevation={0}
-      getContentAnchorEl={null}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "center"
-      }}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "center"
-      }}
-      className={'Header'}
-      {...props}
+        elevation={0}
+        getContentAnchorEl={null}
+        anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center"
+        }}
+        transformOrigin={{
+            vertical: "top",
+            horizontal: "center"
+        }}
+        className={'Header'}
+        {...props}
     />
-  ));
+));
 
-  const StyledMenuItem = withStyles((theme) => ({
+const StyledMenuItem = withStyles((theme) => ({
     root: {
-      "&:focus": {
-        backgroundColor: theme.palette.primary.main,
-        "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-          color: theme.palette.common.white
+        "&:focus": {
+            backgroundColor: theme.palette.primary.main,
+            "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
+                color: theme.palette.common.white
+            }
         }
-      }
     }
-  }))(MenuItem);
+}))(MenuItem);
