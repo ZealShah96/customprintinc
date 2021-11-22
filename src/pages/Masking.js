@@ -5,12 +5,20 @@ import MissionImage from './../images/4.png';
 
 export default function Masking(props) {
     return <Layout pageName={"Masking"}>
-         <ShowContent header={'Washing'} subheader={"The importance of the pre-treatment process:"}
-    message={'Substrate preparation and pretreatment for coating is the first step in the pretreatment process and is critical to success in producing a quality coating. Pretreatment is essential to ensure both longevity and outstanding appearance as it prepares the surface for painting as it cleans off all the debris and oil that comes with material while fabrication and it coats the surface with iron phosphate film which protect against corrosion and promotes adhesion. Pretreatment determines the end quality of the product. In our iron phosphate wash we add fluoride additive to promote adhesion on aluminum parts as it etches the surface of aluminum. Plastic parts are washed with an alcohol based solution.'}/>
+        <ShowContent header={'Masking'}
+            message={'At Custom we have all variety of plugs, caps, dots and tapes for power and paint to take care of all of our customers masking needs.  Often, customers require certain areas of a part that do not require painting.  In this case various types of masking is required to ensure that when the part gets painted, those certain areas that were masked, are not covered in powder or paint.'} />
 
-    <ShowContent subheader={"Washing Systems:"}
-    image={MissionImage}
-    message={'We have state of the art washing system as the equipment in our facility washboothhas been customized to optimize time and accuracy, therefore resulting in better turnaround with better finish.  Our custom tunnels wash system which consists of 360 degree wash which washes the part from all angles ensuring parts are fully cleaned inside out.  The sump of 250 gallon of solution is heated at 130 degree Fahrenheit which is monitored thorough the day ensuring proper ph level and solution temperature for washing.   Our manual wash washes larger parts which can not fit thorough the tunnel wash.  Our manual wash system has 5000lb of pressure at the gun and on demand gas powered burner to ensure consist supply of hot water with chemical injector to ensure cleaning all the debris from the parts and preparing the     surface for painting.  This is one process which has to be done right in order to ensure good adhesion.'}/>
- 
-</Layout>
+        <ShowContent subheader={"Knowledge"}
+            image={MissionImage}
+            message={'Our management team has a diverse knowledge of the industry, and is able to solve your most difficult painting and masking needs. Their knowledge has transferred to the rest of the staff, who are always ready to service as per customer’s requirements.   If our staff comes across a problem or notices a problem like hardware missing, plating coming off then management will be notified and in turn customer will be contacted to ensure quality from the metal fabricator’s side.  This is something our customer really appreciates as their mistakes are sometimes realized and fixed without going into any time delay or rework cost.'} />
+
+        <ShowContent subheader={"Exprience"}
+            message={'Our experienced and trained staff has good attention to detail to ensure the parts are properly counted; threaded holes and studs are properly masked especially when the part is to be powder coated.  Threaded holes are plugged with special silicone plugs and threaded studs are covered with silicone caps.  masking2Caps and plugs are available in all different shapes and sizes for maximum compatibility to the part.'} />
+
+        <ShowContent subheader={"Process"}
+            message={'Masking is done with special heat resistant tape which can withstand high temperatures of 400f so when the part is baked ensuring the tape does not melt. We use silicone high temperature tape for powder applications and masking high temperature tape for paint applications.'} />
+
+        <ShowContent subheader={"Client Improtance"}
+            message={'Masking is done as per customer requirements. Some parts require custom masking which is done manually in our masking department. Trained personal precisely mask the required areas of the part to meet specifications as per customer supplied drawings.'} />
+    </Layout>
 }

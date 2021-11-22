@@ -37,6 +37,25 @@ export function ProcessContent(content) {
     );
 }
 
+export function ProcessContentWithOutStyle(content) {
+    const classes = useStyles();
+    return (
+        <ul>
+            {
+                content.split('.').map((element, index) => {
+                    if(element!=''){
+                        return <li>{`${element.trim()}.`}</li>
+                    }
+                    else{
+                        return ''
+                    }
+                   
+                })
+            }
+        </ul>
+    );
+}
+
 export function colorChangeOfNo(content) {
     return content;
 }

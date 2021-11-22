@@ -51,6 +51,10 @@ const useStyles = makeStyles(() => ({
     image: {
         paddingTop: ImagePadding,
         paddingBottom: ImagePadding
+    },
+    children:{
+        padding: 35,
+        paddingTop: 15
     }
 }));
 
@@ -75,6 +79,9 @@ export default function ShowContent(props) {
             </Grid>
             {props.image ? <Grid item xs={4} className={classes.image}>
                 <img src={props.image} border="0" alt="Link" />
+            </Grid> : ""}
+            {props.children ? <Grid item xs={12} className={classes.children}>
+                {props.children}
             </Grid> : ""}
         </Grid>
     );

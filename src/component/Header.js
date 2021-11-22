@@ -27,13 +27,12 @@ const headersData = [
     },
     {
         label: "Preparation",
-        href: "/logout",
         childs: [{
             label: "Washing",
-            href: "/account",
+            href: "/Washing",
         }, {
             label: "Masking",
-            href: "/account",
+            href: "/Masking",
         }]
     },
     {
@@ -41,27 +40,27 @@ const headersData = [
         href: "/account",
         childs: [{
             label: "Liquid Paint",
-            href: "/account",
+            href: "/LiquidCoating",
         }, {
             label: "Power Coating",
-            href: "/account",
+            href: "/PowderCoating",
         }]
     },
     {
         label: "Slik Screening",
-        href: "/logout",
+        href: "/SlikScreening",
     },
     {
         label: "Gallery",
-        href: "/account",
+        href: "/Gallery",
     },
     {
         label: "FAQ",
-        href: "/logout",
+        href: "/faqs",
     },
     {
         label: "Contact us",
-        href: "/logout",
+        href: "/ContactUs",
     },
 ];
 
