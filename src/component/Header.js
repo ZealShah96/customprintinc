@@ -22,10 +22,6 @@ const headersData = [
         href: "/Profile",
     },
     {
-        label: "Services",
-        href: "/Service",
-    },
-    {
         label: "Preparation",
         childs: [{
             label: "Washing",
@@ -47,8 +43,8 @@ const headersData = [
         }]
     },
     {
-        label: "Slik Screening",
-        href: "/SlikScreening",
+        label: "Silk Screening",
+        href: "/SilkScreening",
     },
     {
         label: "Gallery",
