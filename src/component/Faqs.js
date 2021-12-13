@@ -58,7 +58,7 @@ const useStyles = makeStyles(() => ({
 
 export default function Faqs(props) {
     const classes = useStyles();
-    const filterData = props.small ? data.filter((element, i) => { if (i < 4) { return element } }) : data;
+    const filterData = props.small ? data.filter((element, i) => { if (i < 4) { return element }else{ return ''} }) : data;
 
     return (
         <>

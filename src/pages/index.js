@@ -8,9 +8,7 @@ import Faqs from "../component/Faqs";
 import Layout from "../component/Layout";
 import ShowContent from "../component/Mission";
 import Links from './../component/Links';
-import image from './../images/1.png';
 import bg1 from './../images/2.png';
-import bg2 from './../images/3.png';
 import MissionImage from './../images/4.gif';
 
 
@@ -77,15 +75,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-// cards data
-const services = [
-  { icon: {} }
-
-];
-
-const image1 = image;
 const image2 = bg1;
-const image3 = bg2;
 
 // markup
 const IndexPage = () => {

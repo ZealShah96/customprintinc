@@ -24,7 +24,7 @@ export function ProcessContent(content) {
         <ul className={classes.content}>
             {
                 content.split('.').map((element, index) => {
-                    if(element!=''){
+                    if(element!==''){
                         return <li>{`${element.trim()}.`}</li>
                     }
                     else{
@@ -38,12 +38,11 @@ export function ProcessContent(content) {
 }
 
 export function ProcessContentWithOutStyle(content) {
-    const classes = useStyles();
     return (
         <ul>
             {
                 content.split('.').map((element, index) => {
-                    if(element!=''){
+                    if(element!==''){
                         return <li>{`${element.trim()}.`}</li>
                     }
                     else{
