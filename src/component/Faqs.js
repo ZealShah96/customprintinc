@@ -25,45 +25,68 @@ const useStyles = makeStyles(() => ({
     },
     questionWrapper: {
         borderRadius: "5px",
-        marginBottom: "5px"
+        marginBottom: "5px",
+        // color:"#F5F5F5"
+    },
+    questioncontainer: {
+        backgroundColor: '#d9d9d9',
+        padding: '10px',
+        borderRadius: '10px'
     },
     question: {
+        color: '#ffa280'
         // fontSize: "14px"
     },
     description: {
         // fontSize: "12px"
-    }
+    },
+    Answer: {
+        fontWeight: 'bold',
+        paddingRight: '20px'
+    },
+    icon: {
+        color: '#ffa280'
+    },
+    clickHere: {
+       float:'right'
+    },
+    link: {
+        color: '#ffa280'
+     }
 
 }));
 
 export default function Faqs(props) {
     const classes = useStyles();
-    const filterData=props.small?data.filter((element,i)=>{if(i<4){return element}}):data;
+    const filterData = props.small ? data.filter((element, i) => { if (i < 4) { return element } }) : data;
 
     return (
         <>
             <Grid className={classes.container} container xs={12}>
-                <Grid item xs={12}>
+                <Grid item xs={12} className={classes.questioncontainer}>
                     <>
                         {
                             filterData.map((x, i) => {
                                 return (
                                     <Accordion key={i} className={classes.questionWrapper}>
-                                        <AccordionSummary className={classes.question} expandIcon={<FontAwesomeIcon icon={faChevronDown} />}>
-                                            <b>Question {i+1}:{x.question}</b>
+                                        <AccordionSummary className={classes.question} expandIcon={<FontAwesomeIcon icon={faChevronDown} className={classes.icon} />}>
+                                            <b>Question {i + 1}:{x.question}</b>
                                         </AccordionSummary>
                                         <AccordionDetails className={classes.description}>
-                                            Answer: {x.description}
+                                            <b className={classes.Answer}>Answer:</b> {x.description}
                                         </AccordionDetails>
                                     </Accordion>
                                 )
                             })
                         }
                     </>
+                    <Grid item xs={12} className={classes.clickHere}>
+                        {props.small ? <div><a href='/faqs' className={classes.link}> Click Here </a> for more faqs.</div> : ""}
+                    </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                {props.small?<div><a href='/faqs'> Click Here </a> to check all other faqs.</div>:""}
-                </Grid>
+                {/* <Accordion item xs={12}>
+                {props.small?<AccordionSummary><a href='/faqs'> Click Here </a> to check all other faqs.</AccordionSummary>:""}
+                </Accordion> */}
             </Grid>
 
         </>

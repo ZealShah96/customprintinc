@@ -1,45 +1,22 @@
 import * as React from "react";
 import {
   FaFacebook,
-  FaInstagram,
-  FaYoutube,
-  FaTwitter,
-  FaLinkedin
+  FaInstagram, FaLinkedin, FaTwitter, FaYoutube
 } from "react-icons/fa";
 import {
-  FooterContainer,
-  FooterSubscription,
-  FooterSubHeading,
-  FooterSubText,
-  Form,
-  FormInput,
-  FooterLink,
+  FooterContainer, FooterLink,
   FooterLinkItems,
   FooterLinksContainer,
   FooterLinksWrapper,
-  FooterLinkTitle,
-  SocialMedia,
-  SocialMediaWrap,
-  SocialLogo,
-  SocialIcon,
-  WebsiteRights,
-  SocialIcons,
-  SocialIconLink
+  FooterLinkTitle, SocialIcon, SocialIconLink, SocialIcons, SocialLogo, SocialMedia,
+  SocialMediaWrap, WebsiteRights
 } from "./Footer.elements";
 
-const Footer = () => {
+const Footer = (props) => {
+  var {footerObject}=props;
+  debugger;
   return (
     <FooterContainer>
-      <FooterSubscription>
-        <FooterSubHeading>
-          Join our exclusive membership to receive the latest news and trends
-        </FooterSubHeading>
-        <FooterSubText>You can unsubscribe at any time</FooterSubText>
-        <Form>
-          <FormInput name="email" type="email" placeholder="Your Email" />
-          {/* <Button fontBig>Subscribe</Button> */}
-        </Form>
-      </FooterSubscription>
       <FooterLinksContainer>
         <FooterLinksWrapper>
           <FooterLinkItems>
@@ -79,9 +56,9 @@ const Footer = () => {
         <SocialMediaWrap>
           <SocialLogo href="/">
             <SocialIcon />
-            ULTRA
+            {footerObject.nameOfCompany}
           </SocialLogo>
-          <WebsiteRights>ULTRA © 2020</WebsiteRights>
+          <WebsiteRights>{footerObject.nameOfCompany} © {new Date().getFullYear()}</WebsiteRights>
           <SocialIcons>
             <SocialIconLink href="/" target="_blank" aria-label="Facebook">
               <FaFacebook />

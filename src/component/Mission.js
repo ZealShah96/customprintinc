@@ -62,7 +62,7 @@ export default function ShowContent(props) {
     const classes = useStyles();
 
     return (
-        <Grid item xs={12} container className={[classes.container, 'contentBox']}>
+        <Grid item xs={12} container className={[classes.container, (props.classname!=undefined?props.classname:'contentBox')]}>
             <Grid item xs={props.image ? 8 : 12}>
                 {props.header ? <Grid item xs={12} className={classes.mission}>
                     {props.header}

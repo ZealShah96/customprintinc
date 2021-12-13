@@ -15,7 +15,8 @@ const useStyles = makeStyles(() => ({
         textAlignVertical: 'center',
         padding: '10px',
         fontSize: 25,
-        color: 'black'
+        color: 'black',
+        color: 'coral'
     },
   suppliersData:{
     justifyContent:'center'
