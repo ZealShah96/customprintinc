@@ -10,7 +10,28 @@ var ImagePadding = 75;
 
 const useStyles = makeStyles(() => ({
     container: {
-        backgroundColor: '#F5F5F5'
+        backgroundColor: '#F5F5F5',
+        "&.contentBox ul li::before": {
+            content: '"\\2022"',
+            color: "coral",
+            fontWeight: "bold",
+            display: "inline-block",
+            width: "1em",
+            marginLeft: "-1em"
+        },
+        "&.cardWrapper ul li::before": {
+            content: '"\\2022"',
+            color: "coral",
+            fontWeight: "bold",
+            display: "inline-block",
+            width: "1em",
+            marginLeft: "-1em"
+        },
+        "&.cardWrapper ul": { listStyle: "none" },
+        "& a":{
+            textDecoration: 'none'
+        },
+       "&.contentBox ul": { listStyle: "none" }
     },
     textCenter: {
         // textAlign: 'center',
@@ -51,7 +72,7 @@ const useStyles = makeStyles(() => ({
         paddingTop: ImagePadding,
         paddingBottom: ImagePadding
     },
-    children:{
+    children: {
         padding: 35,
         paddingTop: 15
     }
@@ -61,7 +82,7 @@ export default function ShowContent(props) {
     const classes = useStyles();
 
     return (
-        <Grid item xs={12} container className={[classes.container, (props.classname!==undefined?props.classname:'contentBox')]}>
+        <Grid item xs={12} container className={[classes.container, (props.classname !== undefined ? props.classname : 'contentBox')]}>
             <Grid item xs={props.image ? 8 : 12}>
                 {props.header ? <Grid item xs={12} className={classes.mission}>
                     {props.header}

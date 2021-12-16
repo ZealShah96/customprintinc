@@ -19,10 +19,10 @@ const useStyles = makeStyles(() => ({
         // maxWidth: "250px",
         margin: 10,
         background: '#EEEEEE',
-        // '&:hover': {
-        //     background: "coral",
-        //     color:"#FFFFFF"
-        //  },
+        '&:hover': {
+            background: "coral",
+            color:"#FFFFFF"
+         },
     },
     cardContent: {
         marginTop: "10%"
