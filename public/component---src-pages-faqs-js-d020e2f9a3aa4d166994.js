@@ -1,2 +1,0 @@
-(self.webpackChunkcustom_print=self.webpackChunkcustom_print||[]).push([[295],{3892:function(e,t,n){"use strict";n.r(t),n.d(t,{default:function(){return l}});var r=n(7294),u=n(7553),c=n(3970),a=n(9626);function l(e){return r.createElement(c.Z,{pageName:"FAQs"},r.createElement(a.Z,{header:"FAQs"}),r.createElement(a.Z,null,r.createElement(u.Z,null)))}}}]);
-//# sourceMappingURL=component---src-pages-faqs-js-d020e2f9a3aa4d166994.js.map
