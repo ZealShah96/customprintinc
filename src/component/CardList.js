@@ -9,7 +9,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ShowContent from "../component/Mission";
 import { ProcessContentWithOutStyle as ProcessContent } from "../helpers";
-import './CardList.css';
+
 
 const useStyles = makeStyles(() => ({
     cardWrapper: {

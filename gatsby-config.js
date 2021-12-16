@@ -2,8 +2,14 @@ module.exports = {
   siteMetadata: {
     title: "CustomPrint",
   },
+  
   plugins: [
-    "gatsby-plugin-sass",
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        implementation: require('node-sass'),
+      }
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-remark",

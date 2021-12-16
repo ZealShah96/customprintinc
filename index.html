@@ -20,13 +20,39 @@
             margin-left: 15%;
             height: 200px;
         }
+
+        .contentBox ul {
+            list-style: none;
+        }
+
+        .contentBox ul li::before {
+            content: "\2022";
+            color: coral;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            /* font-size:20px; */
+        }
+
+        a {
+            text-decoration: none;
+            color: black
+        }
+
+        .cardWrapper:hover {
+            background-color: coral;
+            color: floralwhite;
+            text-decoration-color: floralwhite;
+        }
     </style>
 </head>
 
 <body>
     <section class="container">
         <div class="one">
-            <a title="Washing" href="http://www.custompaintinc.com/washing/"><strong>Washing</strong></a><p></p>
+            <a title="Washing" href="http://www.custompaintinc.com/washing/"><strong>Washing</strong></a>
+            <p></p>
             <ul>
                 <li>Automated 360 degree tunnel cleansing system</li>
                 <li>Manual pressure washing</li>
@@ -35,7 +61,8 @@
             <ul>
                 <li>Precision part masking as per design specifications</li>
             </ul>
-            <p><strong><a title="Liquid Paint Coating" href="http://www.custompaintinc.com/liquid-paint-coating/">Liquid Paint Coating</a><br></strong></p>
+            <p><strong><a title="Liquid Paint Coating" href="http://www.custompaintinc.com/liquid-paint-coating/">Liquid
+                        Paint Coating</a><br></strong></p>
             <ul>
                 <li>Electrostatic spray (wet) paint coating</li>
                 <li>Various types of paints available</li>
@@ -43,15 +70,18 @@
             </ul>
         </div>
         <div class="two">
-            <p><strong><a title="Powder Coating" href="http://www.custompaintinc.com/powder-coating/">Powder Coating</a></strong></p>
+            <p><strong><a title="Powder Coating" href="http://www.custompaintinc.com/powder-coating/">Powder
+                        Coating</a></strong></p>
             <ul>
                 <li>Manual electrostatic powder coating</li>
                 <li>Various types of powder paints available</li>
                 <li>Custom colors and textures accomodated</li>
             </ul>
-            <p><strong><a title="Silk Screening" href="http://www.custompaintinc.com/silk-screening/">Silk Screening</a></strong></p>
+            <p><strong><a title="Silk Screening" href="http://www.custompaintinc.com/silk-screening/">Silk
+                        Screening</a></strong></p>
             <ul>
-                <li>Precision silk screening</li></ul>
+                <li>Precision silk screening</li>
+            </ul>
         </div>
     </section>
 </body>

@@ -4,7 +4,6 @@ import {
 import Grid from '@material-ui/core/Grid';
 import React from "react";
 import { ProcessContent } from "../helpers";
-import './Mission.css';
 
 var ImagePadding = 75;
 

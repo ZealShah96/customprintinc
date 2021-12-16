@@ -9,7 +9,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { withStyles } from "@material-ui/core/styles";
 import { Link } from "gatsby";
 import React from "react";
-import './Header.css';
 
 
 const headersData = [
@@ -77,8 +76,9 @@ const useStyles = makeStyles(() => ({
         paddingLeft: 10
     },
     achorLinks: {
-        textDecoration: 'none',
-        color: 'black'
+        "& a":{
+            textDecoration: 'none'
+        }
     },
     button: {
         color: 'coral',
@@ -110,7 +110,7 @@ export default function Header() {
         return headersData.map(({ label, href, childs }) => {
 
             return (
-                <React.Fragment>
+                <React.Fragment className={achorLinks}>
                     {
                         childs !== undefined ? SimpleMenu(childs, label) : <Link to={href} replace><Button className={button}>{label}</Button></Link>
                     }
@@ -128,7 +128,7 @@ export default function Header() {
 
 export function SimpleMenu(childs, label) {
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const { icon } = useStyles();
+    const { icon,achorLinks } = useStyles();
     const classes = useStyles();
 
     const handleClick = (event) => {
@@ -140,7 +140,7 @@ export function SimpleMenu(childs, label) {
     };
 
     return (
-        <React.Fragment>
+        <React.Fragment >
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className={classes.button}>
                 <Button className={classes.button}>{label}</Button>
                 {childs !== undefined ? <FontAwesomeIcon icon={faAngleDown} className={icon} /> : ''}
@@ -152,6 +152,7 @@ export function SimpleMenu(childs, label) {
                 keepMounted
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
+                className={achorLinks}
             >
                 {
                     childs.map(({ label, href, childs }) => {
