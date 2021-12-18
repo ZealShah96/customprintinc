@@ -1,20 +1,20 @@
 import * as React from "react";
 import {
-  FaFacebook,
-  FaInstagram, FaLinkedin, FaTwitter, FaYoutube
+    FaFacebook,
+    FaInstagram, FaLinkedin, FaTwitter, FaYoutube
 } from "react-icons/fa";
 import {
-  FooterContainer, FooterLink,
-  FooterLinkItems,
-  FooterLinksContainer,
-  FooterLinksWrapper,
-  FooterLinkTitle, SocialIcon, SocialIconLink, SocialIcons, SocialLogo, SocialMedia,
-  SocialMediaWrap, WebsiteRights
+    FooterContainer, FooterLink,
+    FooterLinkItems,
+    FooterLinksContainer,
+    FooterLinksWrapper,
+    FooterLinkTitle, SocialIcon, SocialIconLink, SocialIcons, SocialLogo, SocialMedia,
+    SocialMediaWrap, WebsiteRights
 } from "./Footer.elements";
 
 const Footer = (props) => {
   var {footerObject}=props;
-  debugger;
+  
   return (
     <FooterContainer>
       <FooterLinksContainer>

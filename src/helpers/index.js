@@ -2,6 +2,7 @@ import {
     makeStyles
 } from "@material-ui/core";
 import React from "react";
+import CountUp from 'react-countup';
 import Layout from "../component/Layout";
 import ShowContent from "../component/Mission";
 
@@ -18,6 +19,7 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
+let keywords=['powder','coating','silk','screening','custom','painting','Quality','service','business','paint'];
 
 
 export function ProcessContent(content) {
@@ -27,7 +29,7 @@ export function ProcessContent(content) {
             {
                 content.split('.').map((element, index) => {
                     if (element !== '') {
-                        return <li>{`${element.trim()}.`}</li>
+                        return <li>{ColorChangeOfNo(element.trim())}</li>
                     }
                     else {
                         return ''
@@ -58,23 +60,54 @@ export function ProcessContentWithOutStyle(content) {
 }
 
 export function ProcessContentList(content) {
-    debugger;
+
     return <Layout pageName={content.pageName}>
         {
-            
+
             content.contentList.map((element, index) => {
-             debugger;
+
                 return <ShowContent {...element}>{element.childrens}</ShowContent>
             })
         }
     </Layout>
 }
 
-export function colorChangeOfNo(content) {
-    return content;
+export function ColorChangeOfNo(content) {
+    const useStyles = makeStyles(() => ({
+        number: {
+            color: 'coral',
+            paddingLeft:'5px'
+        },
+        keywords:{
+            color: 'coral',
+            padding:'5px',
+            // fontSize:'15px'
+        }
+    }));
+
+
+    const classes = useStyles();
+    let words = content.split(' ');
+    let elements=[];
+    return (<React.Fragment>{
+        words.map(element => {
+            debugger;
+            if(parseInt(element)>50){
+                return <b><CountUp className={classes.number} end={parseInt(element)} duration={5}/></b>
+            }
+            else if(keywords.indexOf(element.toLowerCase())>-1){
+                return <b className={classes.keywords}>{`${element.substring(0,1).toUpperCase()}${element.substring(1,element.length)}`}</b>
+            }
+            else{
+                return ' '+element
+            }
+            
+        })
+    }.
+    </React.Fragment>)
 }
 
 
-export function RedirectToHomeDiv(){
+export function RedirectToHomeDiv() {
     return <ShowContent id='RedirectToHomeDiv'><a href='/'> Click Here </a> to go to Home Page again as we are developing this page.</ShowContent>;
-  }
+}

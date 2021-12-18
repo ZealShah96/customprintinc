@@ -113,7 +113,7 @@ const cards = [
 
 export default function CardList(props) {
     const classes = useStyles();
-    debugger;
+    
     return (
         <ShowContent header={'Services'} classname={'ServicesComponent'}>
             <Carousel responsive={responsive} showDots={false} autoPlay={true} infinite={true} autoPlaySpeed={3000}>
