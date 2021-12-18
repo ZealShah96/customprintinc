@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles } from '@material-ui/core';
 import React from "react";
 
-const data = [
+const content = [
     { question: "What is powder coating?", description: "Powder coating is a modern paint application consisting of fine dry powder pigment and resin. It is applied electro-statically to metal parts by charging the substrate and power. It then heated to a temperature of about 400°F which will cure and adhere the power to the surface. Once it is baked, it is solid as a rock and flexible at same time resulting in a beautifully smooth, highly durable finish." },
     { question: "How quick is your turn-around?", description: "In many cases our turn-around is same-day, depending on the volume, color and masking requirements. However, in general, coating may take about three to four days after the product arrives. If you are in a bind and have small job that you need to turn around in required time then we do work with our clients as we understand the importance of deadlines." },
     { question: "Are there different choice of color and powder available?", description: "At Custom Paint there are endless possibilities of colors you can get it formulated. We can match thousands of colors using our powder suppliers ranging from high, medium, and low gloss, metallic, textured, and clear powders, there is no limitation on the selection of powder. Most common and universal system we work with is RAL and PAN chart. We can also get a custom match powder from a sample chip in variety of finishes. We can match any color of your choice in 3-5 business days as we work with our suppliers very closely to achieve the best turnaround time.\n The two main types of powder are polyester and epoxy. Epoxy is best for indoor applications because, while it provides a highly durable, shiny finish, it eventually forms a dull film in reaction to direct sunlight. However, polyester does not have this problem, so is well suited to outdoor applications." },
@@ -58,7 +58,7 @@ const useStyles = makeStyles(() => ({
 
 export default function Faqs(props) {
     const classes = useStyles();
-    const filterData = props.small ? data.filter((element, i) => { if (i < 4) { return element }else{ return ''} }) : data;
+    const filterData = props.small ? content.filter((element, i) => { if (i < 4) { return element }else{ return ''} }) : content;
 
     return (
         <>
