@@ -2,6 +2,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles } from '@material-ui/core';
 import React from "react";
+import { ProcessContent } from '../helpers';
 
 const content = [
     { question: "What is powder coating?", description: "Powder coating is a modern paint application consisting of fine dry powder pigment and resin. It is applied electro-statically to metal parts by charging the substrate and power. It then heated to a temperature of about 400°F which will cure and adhere the power to the surface. Once it is baked, it is solid as a rock and flexible at same time resulting in a beautifully smooth, highly durable finish." },
@@ -73,7 +74,7 @@ export default function Faqs(props) {
                                             <b>Question {i + 1}:{x.question}</b>
                                         </AccordionSummary>
                                         <AccordionDetails className={classes.description}>
-                                            <b className={classes.Answer}>Answer:</b> {x.description}
+                                             {ProcessContent(x.description)}
                                         </AccordionDetails>
                                     </Accordion>
                                 )

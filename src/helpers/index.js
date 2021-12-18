@@ -6,6 +6,7 @@ import CountUp from 'react-countup';
 import Layout from "../component/Layout";
 import ShowContent from "../component/Mission";
 
+
 var padding = 30;
 
 const useStyles = makeStyles(() => ({
@@ -81,22 +82,33 @@ export function ColorChangeOfNo(content) {
         keywords:{
             color: 'coral',
             padding:'5px',
-            // fontSize:'15px'
+            fontWeight:'bold',
+            
+            '&:hover': {
+            //   fontSize:'20px',
+            //   backgroundColor:'#FDBDB0',
+              transition: 'all 2s ease-in-out',
+              fontSize: '18px'
+             }
+        },
+        keywordsHover:{
+            color: 'coral',
+            padding:'5px',
+            fontWeight:'bold',
+            fontSize:'15px'
         }
     }));
 
-
     const classes = useStyles();
     let words = content.split(' ');
-    let elements=[];
     return (<React.Fragment>{
         words.map(element => {
-            debugger;
+            
             if(parseInt(element)>50){
                 return <b><CountUp className={classes.number} end={parseInt(element)} duration={5}/></b>
             }
             else if(keywords.indexOf(element.toLowerCase())>-1){
-                return <b className={classes.keywords}>{`${element.substring(0,1).toUpperCase()}${element.substring(1,element.length)}`}</b>
+                return <span className={classes.keywords}>{`${element.substring(0,1).toUpperCase()}${element.substring(1,element.length)}`}</span>
             }
             else{
                 return ' '+element

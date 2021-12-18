@@ -1,14 +1,14 @@
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    AppBar, Button, makeStyles, Toolbar,
+    AppBar, Button, Drawer, IconButton, makeStyles, MenuIcon, Toolbar,
     Typography
 } from "@material-ui/core";
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { withStyles } from "@material-ui/core/styles";
 import { Link } from "gatsby";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 
 const headersData = [
@@ -91,6 +91,29 @@ const useStyles = makeStyles(() => ({
 export default function Header() {
     const { header, logo, toolbarButtons, achorLinks,button } = useStyles();
 
+    const [state, setState] = useState({
+        mobileView: false,
+      });
+
+      const { mobileView } = state;
+
+
+      useEffect(() => {
+        const setResponsiveness = () => {
+          return window.innerWidth < 900
+            ? setState((prevState) => ({ ...prevState, mobileView: true }))
+            : setState((prevState) => ({ ...prevState, mobileView: false }));
+        };
+    
+        setResponsiveness();
+    
+        window.addEventListener("resize", () => setResponsiveness());
+    
+        return () => {
+          window.removeEventListener("resize", () => setResponsiveness());
+        };
+      }, []);
+
     const displayDesktop = () => {
         return (
             <Toolbar>
@@ -100,9 +123,45 @@ export default function Header() {
         );
     };
 
+    const displayMobile = () => {
+        const handleDrawerOpen = () =>
+          setState((prevState) => ({ ...prevState, drawerOpen: true }));
+        const handleDrawerClose = () =>
+          setState((prevState) => ({ ...prevState, drawerOpen: false }));
+    
+        return (
+          <Toolbar>
+            <IconButton
+              {...{
+                edge: "start",
+                color: "inherit",
+                "aria-label": "menu",
+                "aria-haspopup": "true",
+                onClick: handleDrawerOpen,
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+    
+            <Drawer
+              {...{
+                anchor: "left",
+                open: drawerOpen,
+                onClose: handleDrawerClose,
+              }}
+            >
+              <div className={drawerContainer}>{getMenuButtons(headersData)}</div>
+            </Drawer>
+    
+            <div>{femmecubatorLogo}</div>
+          </Toolbar>
+        );
+      };
+    
+
     const femmecubatorLogo = (
-        <Typography variant="h6" component="h1" className={logo}>
-            <img src="https://i.ibb.co/2dMYZm2/logo-removebg-preview.png" alt="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" width="458" height="90" title="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" />
+        <Typography variant={mobileView?"h2":"h6"} component={mobileView?"h2":"h6"} className={logo}>
+            <img src="https://i.ibb.co/2dMYZm2/logo-removebg-preview.png" alt="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" width={((window.innerWidth/1920)*458)} height={((window.innerHeight/720)*90)} title="CUSTOM PAINTS &amp; SILK SCREEN INC. - MASKING, LIQUID PAINT COATING, POWDER COATING &amp; SILK SCREENING" />
         </Typography>
     );
 
@@ -120,8 +179,9 @@ export default function Header() {
         });
     };
 
+
     return (
-        <AppBar className={[achorLinks, header]}>{displayDesktop()}</AppBar>
+        <AppBar className={[achorLinks, header]}>{mobileView?displayMobile():displayDesktop()}</AppBar>
     );
 }
 
