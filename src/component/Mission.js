@@ -44,6 +44,10 @@ const useStyles = makeStyles(() => ({
         textAlign: 'justify',
         'ul li:before': {
             'list-style-type': '+'
+        },
+        "@media (max-width: 900px)": {
+            padding: 2,
+            fontSize:9
         }
     },
     mission: {
@@ -55,7 +59,11 @@ const useStyles = makeStyles(() => ({
         textAlign: 'center',
         textAlignVertical: 'center',
         borderRadius: 30,
-        color: 'coral'
+        color: 'coral',
+        "@media (max-width: 900px)": {
+            fontSize: 14,
+            borderRadius: 15
+        }
     },
     submission: {
         fontSize: 20,
@@ -63,27 +71,36 @@ const useStyles = makeStyles(() => ({
         paddingLeft: 35,
         fontFamily: 'system-ui',
         fontWeight: '600',
-        // textAlign: 'center',
-        // textAlignVertical: 'center',
         borderRadius: 30,
-        color: 'coral'
+        color: 'coral',
+        "@media (max-width: 900px)": {
+            fontSize: 10,
+            borderRadius: 15,
+            textAlign: 'center',
+            textAlignVertical: 'center'
+        }
     },
     image: {
         paddingTop: ImagePadding,
-        paddingBottom: ImagePadding
+        paddingBottom: ImagePadding,
+        height:'auto',
+        width:'100%'
     },
     children: {
         padding: 35,
-        paddingTop: 15
+        paddingTop: 15,
+        "@media (max-width: 900px)": {
+            padding: 10,
+        }
     }
 }));
 
 export default function ShowContent(props) {
     const classes = useStyles();
-
+    const gridimage=window.innerWidth < 900?12:8;
     return (
         <Grid item xs={12} container className={[classes.container, (props.classname !== undefined ? props.classname : 'contentBox')]}>
-            <Grid item xs={props.image ? 8 : 12}>
+            <Grid item xs={props.image ? gridimage : 12}>
                 {props.header ? <Grid item xs={12} className={classes.mission}>
                     {props.header}
                 </Grid> : ""}
@@ -97,8 +114,8 @@ export default function ShowContent(props) {
                     {/*  */}
                 </Grid> : ""}
             </Grid>
-            {props.image ? <Grid item xs={4} className={classes.image}>
-                <img src={props.image} border="0" alt="Link" />
+            {props.image ? <Grid item xs={12-gridimage} className={classes.image}>
+                <img src={props.image} border="0" alt="Link" height={'auto'} width={'100%'}/>
             </Grid> : ""}
             {props.children ? <Grid item xs={12} className={classes.children}>
                 {props.children}

@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     // sbackgroundColor: "#d6d6d4",
   },
   suppliers: {
-    height: 250,
+    height: 'auto',
     alignItems: 'center',
     justifyContent: 'center'
   }
