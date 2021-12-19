@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
 
 export default function Links(props) {
   const classes = useStyles();
-  const gridimage = window.innerWidth < 900 ? 12 : 8;
+  const gridimage = typeof window !== "undefined"?(window.innerWidth < 900 ? 12 : 8):8;
 
   return (
     <Grid container xs={12} className={classes.block}>
